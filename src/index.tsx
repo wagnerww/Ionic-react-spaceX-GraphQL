@@ -19,5 +19,6 @@ import '@ionic/react/css/flex-utils.css'
 import '@ionic/react/css/display.css'
 /* Theme variables */
 import './theme/variables.css'
+import './theme/theme.css'
 
 ReactDOM.render(<App />, document.getElementById('root'))
