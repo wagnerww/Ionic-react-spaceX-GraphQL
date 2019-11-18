@@ -8,7 +8,7 @@ import {
 } from '@ionic/react'
 import Launches from '../components/Launches';
 
-const Home: React.FC = () => {
+const Missions: React.FC = () => {
 
   return (
     <IonPage>
@@ -24,4 +24,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default Missions
