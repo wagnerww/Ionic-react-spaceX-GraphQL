@@ -1,7 +1,8 @@
 import React from 'react'
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton } from '@ionic/react';
 import { useParams } from 'react-router';
-import { useLaunchQuery } from '../generated/graphql';
+import { useLaunchQuery, Launch } from '../generated/graphql';
+import LaunchDetail from '../components/LaunchDetail';
 
 const Mission: React.FC = () => {
   const { id } = useParams<{id: string}>()
@@ -13,13 +14,16 @@ const Mission: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/missions" />
+          </IonButtons>
           <IonTitle>
             Mission Details
           </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
-          {loading ? <p>Loading...</p> : <p>Launch: {data!.launch.mission_name}</p> }
+          {loading ? <p>Loading...</p> : <LaunchDetail launch={data!.launch as Launch} /> }
       </IonContent>
     </IonPage>
   )
